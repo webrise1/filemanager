@@ -7,12 +7,13 @@ use yii\helpers\BaseFileHelper;
 use yii\helpers\Url;
 class File extends ActiveRecord {
     public $upload_files;
+    const TABLE_NAME='ext_file_manager_file';
 
 
 
     public static function tableName()
     {
-        return '{{%filemanager_file}}';
+        return self::TABLE_NAME;
     }
     public function upload($uploadsPath)
     {

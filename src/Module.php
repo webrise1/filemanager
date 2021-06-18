@@ -6,6 +6,7 @@ use yii\base\Module as BaseModule;
 use Yii;
 class Module extends BaseModule
 {
+    const EXT_NAME='ext-file-manager';
     const MODULE_UPLOADS_FOLDER_NAME='extension_filemanager';
     const DEPENDENT_MODULES=[
       'pdfgenerator'
@@ -86,7 +87,10 @@ class Module extends BaseModule
             }
         }
 
-
-
+    }
+    public static function getMenuItems($label){
+        return  [
+            'label' => $label, 'icon' => 'files-o','url' => ['/'.self::EXT_NAME.'/admin']
+        ];
     }
 }
